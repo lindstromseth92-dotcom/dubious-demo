@@ -1,0 +1,14 @@
+{
+  "_about": "A small example of the source-tier registry, so the code and tests run. The registry the project actually uses is larger and is not published. Tiers describe what kind of source a domain is, not whether a given page on it is right. Subdomains inherit their parent's tier.",
+  "tiers": {
+    "primary": ["cdc.gov", "who.int", "nih.gov", "nature.com", "census.gov"],
+    "secondary": ["reuters.com", "apnews.com", "bbc.com"],
+    "tertiary": ["wikipedia.org", "britannica.com"],
+    "commentary": ["medium.com", "substack.com", "youtube.com"],
+    "low_credibility": []
+  },
+  "suffix_tiers": {
+    ".gov": "primary",
+    ".edu": "secondary"
+  }
+}

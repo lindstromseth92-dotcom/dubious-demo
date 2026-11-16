@@ -1,0 +1,67 @@
+/* Dubious: in-page underline styles.
+   <dubious-mark> is an unknown inline element, so page CSS that targets
+   span/em/a does not touch it. Everything is !important because we are a
+   guest in someone else's stylesheet. */
+
+dubious-mark {
+  display: inline !important;
+  background: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Claim found, verdict still being worked out. */
+dubious-mark[data-state='pending'] {
+  text-decoration: underline dotted #8b93a1 !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  cursor: progress !important;
+}
+
+/* Dubious claim: squiggle, like a spelling error. */
+dubious-mark[data-state='flagged'] {
+  text-decoration-line: underline !important;
+  text-decoration-style: wavy !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-skip-ink: none !important;
+  cursor: help !important;
+}
+
+dubious-mark[data-state='flagged'][data-band='medium'] {
+  text-decoration-color: #d98a00 !important;
+}
+dubious-mark[data-state='flagged'][data-band='high'] {
+  text-decoration-color: #e8590c !important;
+}
+dubious-mark[data-state='flagged'][data-band='severe'] {
+  text-decoration-color: #e03131 !important;
+}
+
+dubious-mark[data-state='flagged'][data-active][data-band='medium'] {
+  background: rgba(217, 138, 0, 0.16) !important;
+}
+dubious-mark[data-state='flagged'][data-active][data-band='high'] {
+  background: rgba(232, 89, 12, 0.16) !important;
+}
+dubious-mark[data-state='flagged'][data-active][data-band='severe'] {
+  background: rgba(224, 49, 49, 0.16) !important;
+}
+dubious-mark[data-state='pending'][data-active] {
+  background: rgba(139, 147, 161, 0.16) !important;
+}
+
+dubious-mark[data-state='flagged']:focus-visible {
+  outline: 2px solid #4c6ef5 !important;
+  outline-offset: 2px !important;
+  border-radius: 2px !important;
+}
+
+/* Checked and fine, or below the threshold: leave no trace. */
+dubious-mark[data-state='clean'] {
+  text-decoration: inherit !important;
+  cursor: inherit !important;
+}

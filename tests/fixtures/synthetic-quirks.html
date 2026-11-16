@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Synthetic quirks page for Dubious</title>
+    <!-- Written for the end-to-end test. It packs together markup that has tripped the extension before:
+         the whole body inside a <form>, emoji before the claims (UTF-16 offsets), a lone <br> after a
+         source newline, and old-style footnotes that are bare <a name> anchors separated by <br>.
+         It mixes false claims with two true, footnoted ones that must not be underlined. -->
+    <style>
+      body { font: 18px/1.6 Georgia, serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+      .notes { font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <form id="form1" method="post" action="#">
+      <div id="content">
+        <h1>💉🚨 What they are not telling you about vaccines</h1>
+        <p>💉 Wake up! 🚨 The MMR vaccine causes autism in one of every 36 children, and doctors know it.</p>
+        <p>Since 1990 the childhood vaccine schedule has tripled
+<br>
+and autism diagnoses have risen with it, which proves the shots are to blame.</p>
+        <p>Measles is a highly contagious viral disease 🦠 that spreads through the air.<sup><a href="#fn1">1</a></sup> Thimerosal was removed from most childhood vaccines in the United States by 2001.<sup><a href="#fn2">2</a></sup></p>
+        <p>Andrew Wakefield's 1998 study in The Lancet proved the link between the MMR vaccine and autism, and that study has never been retracted.</p>
+        <hr />
+        <div class="notes">
+          <a name="fn1"></a>1. CDC, <a href="https://www.cdc.gov/measles/about/index.html">About Measles</a><br />
+          <a name="fn2"></a>2. FDA, <a href="https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/thimerosal-and-vaccines">Thimerosal and Vaccines</a><br />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

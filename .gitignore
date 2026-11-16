@@ -1,0 +1,13 @@
+.venv/
+.env
+__pycache__/
+*.sqlite
+.pytest_cache/
+.ruff_cache/
+.cache/
+tests/fixtures/*.html
+!tests/fixtures/synthetic-quirks.html
+!tests/fixtures/demo-mixed.html
+ontology/registry.json
+.env.*
+!.env.example
